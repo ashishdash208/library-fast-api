@@ -11,3 +11,12 @@ def create_book(book_data: BookCreate) -> Book:
     book_db.append(new_book)
     id_counter += 1
     return new_book
+
+def get_all_books() -> List[Book]:
+    return book_db
+
+def get_book_by_id(book_id: int) -> Optional[Book]:
+    for book in book_db:
+        if book.id == book_id:
+            return book
+    return None
